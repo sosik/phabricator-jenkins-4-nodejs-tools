@@ -1,5 +1,5 @@
-def call(String val, Closure body) {
-	echo "xxx"
+def call(Boolean debug = false, String filename, Closure body) {
+	echo "$filename"
 	def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
