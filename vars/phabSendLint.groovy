@@ -6,8 +6,10 @@ def call(String filename, Map options = [:]) {
 	def f = new File(filename)
 	def wd = new File(pwd())
 
+	println "GGGG"
 	f = f.absolute ?: new File(wd, filename)
 
+	println "GGGG"
 	if (!f.exists()) {
 		if (opts.debug) {println "checkstyle file does not exist, skipping..."}
 		return
