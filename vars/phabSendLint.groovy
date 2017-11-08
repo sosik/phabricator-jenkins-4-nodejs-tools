@@ -1,4 +1,4 @@
-def call(String filename, Boolean debug = false) {
+def call(Boolean debug = false, String filename) {
 	def f = new File(filename)
 	def wd = new File(pwd())
 
