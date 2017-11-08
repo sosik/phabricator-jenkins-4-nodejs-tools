@@ -11,7 +11,7 @@ def call(String filename, Map options = [:]) {
 
 	println "GGGG"
 	if (!f.exists()) {
-		if (opts.debug) {println "checkstyle file does not exist, skipping..."}
+		if (opts.debug) {println "checkstyle file ${f.absolutePath} does not exist, skipping..."}
 		return
 	}
 
