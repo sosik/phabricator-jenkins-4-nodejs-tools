@@ -15,5 +15,4 @@ def call(String filename, Boolean debug = false, Closure body = null) {
 	} catch (e) {
 		print e
 	}
-*/
 }
