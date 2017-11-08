@@ -4,7 +4,7 @@ def call(String filename, Map options = [:]) {
 	] + options
 
 	def f = new File(filename)
-	def wd = pwd()
+	def wd = '.'
 
 	println "GGGG ${f.exists()} ${f.isFile()} ${f.path}"
 	println "GGGG"
