@@ -6,6 +6,7 @@ def call(String filename, Map options = [:]) {
 	def f = new File(filename)
 	def wd = pwd()
 
+	println "GGGG ${f.exists()} ${f.isFile()} ${f.path}"
 	println "GGGG"
 	f = f.absolute ?: new File(wd, filename)
 	def f2 = new File(wd)
