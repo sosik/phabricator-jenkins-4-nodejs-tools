@@ -1,11 +1,10 @@
-def call(Boolean debug = false, String filename, Closure body) {
-	echo "$filename"
+def call(String filename, Boolean debug = false, Closure body = null) {
 	def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
 
-	echo "aaa"
+	debug && echo "${filename}"
 /*	def wd = config.pwd ? new File(config.pwd) : new File('.')
 	def file = new File(wd, config.filename)
 
