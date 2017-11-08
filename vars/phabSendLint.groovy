@@ -1,5 +1,5 @@
 def call(String filename, Map options = [:]) {
-	def opt = [
+	def opts = [
 		debug: false
 	] + options
 
@@ -33,5 +33,5 @@ def call(String filename, Map options = [:]) {
 		it
 	}
 	println "FFFFF"
-	if (opt.debug) { println "${reportMap}"}
+	if (opts.debug) { println "${reportMap}"}
 }
