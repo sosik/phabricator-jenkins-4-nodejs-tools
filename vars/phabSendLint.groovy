@@ -3,9 +3,13 @@ def call(String filename, Map options = [:]) {
 		debug: false
 	] + options
 
+	try {
 	def f = new File(filename)
 	def wd = new File(pwd())
 
 	f = f.absolute ?: new File(wd, filename)
 	echo "${f.absolutePath}"
+	} catch(e) {
+		println e
+	}
 }
