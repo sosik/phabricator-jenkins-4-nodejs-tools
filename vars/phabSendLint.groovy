@@ -9,7 +9,7 @@ def call(String filename, Map options = [:]) {
 	println "GGGG"
 	f = f.absolute ?: new File(wd, filename)
 
-	println "GGGG"
+	println "GGGG ${f.exists()}"
 	if (!f.exists()) {
 		if (opts.debug) {println "checkstyle file ${f.absolutePath} does not exist, skipping..."}
 		return
