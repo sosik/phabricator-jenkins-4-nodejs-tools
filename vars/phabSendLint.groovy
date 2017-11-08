@@ -8,8 +8,8 @@ def call(String filename, Map options = [:]) {
 
 	println "GGGG"
 	f = f.absolute ?: new File(wd, filename)
-
-	println "GGGG ${f.exists()} ${f.path}"
+	def f2 = new File(wd)
+	println "GGGG ${f.exists()} ${f.isFile()} ${f.path} ${f2.exists()}"
 	if (!f.exists()) {
 		if (opts.debug) {println "checkstyle file ${f.absolutePath} does not exist, skipping..."}
 		return
