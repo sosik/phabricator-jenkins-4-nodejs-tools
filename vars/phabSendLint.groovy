@@ -1,8 +1,11 @@
 def call(String filename, Boolean debug = false, Closure body = null) {
 	def config = [:]
-    body.resolveStrategy = Closure.DELEGATE_FIRST
-    body.delegate = config
-    body()
+
+	if (body) {
+    	body.resolveStrategy = Closure.DELEGATE_FIRST
+	    body.delegate = config
+    	body()
+	}
 
 	try {
 	def f = new File(filename)
@@ -10,7 +13,7 @@ def call(String filename, Boolean debug = false, Closure body = null) {
 
 	f = f.absolute ?: new File(wd, filename)
 	} catch (e) {
-		echo e
+		print e
 	}
 */
 }
