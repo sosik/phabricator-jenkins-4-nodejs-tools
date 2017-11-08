@@ -4,10 +4,10 @@ def call(String filename, Map options = [:]) {
 	] + options
 
 	def f = new File(filename)
-	def wd = new File(pwd())
+	def wd = pwd()
 
 	println "GGGG"
-	f = f.absolute ?: new File(wd, filename).absoluteFile()
+	f = f.absolute ?: new File(wd, filename)
 
 	println "GGGG ${f.exists()}"
 	if (!f.exists()) {
@@ -19,7 +19,7 @@ def call(String filename, Map options = [:]) {
 	def r = new XmlSlurper().parse(f)
 	def reportMap = r.file.collect {
 		// get relative filename
-		String relFilename = it.@name.toString().drop(wd.absolutePath.length() + 1)
+		String relFilename = it.@name.toString().drop(wd.length() + 1)
 		it.error.collect {[   
 			name: it.@source.toString(),
 			severity: it.@severity.toString(),
