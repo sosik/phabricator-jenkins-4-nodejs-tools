@@ -7,7 +7,7 @@ def call(String filename, Map options = [:]) {
 	def wd = new File(pwd())
 
 	println "GGGG"
-	f = f.absolute ?: new File(wd, filename)
+	f = f.absolute ?: new File(wd, filename).absoluteFile()
 
 	println "GGGG ${f.exists()}"
 	if (!f.exists()) {
