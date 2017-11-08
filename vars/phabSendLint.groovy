@@ -1,11 +1,11 @@
-def call(String filename, Boolean debug = false, String pwd , body) {
+def call(body) {
 	def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
     body.delegate = config
     body()
 
-	def wd = pwd ? new File(pwd) : new File('.')
-	def file = new File(wd, filename)
+	def wd = config.pwd ? new File(config.pwd) : new File('.')
+	def file = new File(wd, config.filename)
 
 	echo "File to parse ${file.absolutePath}, WD ${wd.absolutePath}"
 
