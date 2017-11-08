@@ -11,10 +11,10 @@ def call(String filename, Map options = [:]) {
 	f = f.absolute ?: new File(wd, filename)
 	def f2 = new File(wd)
 	println "GGGG ${f.exists()} ${f.isFile()} ${f.path} ${f2.exists()}"
-	if (!f.exists()) {
-		if (opts.debug) {println "checkstyle file ${f.absolutePath} does not exist, skipping..."}
-		return
-	}
+//	if (!f.exists()) {
+//		if (opts.debug) {println "checkstyle file ${f.absolutePath} does not exist, skipping..."}
+//		return
+//	}
 
 	println "GGGG"
 	def r = new XmlSlurper().parse(f)
