@@ -1,4 +1,4 @@
-def call(Closure body) {
+def call(String val, Closure body) {
 	echo "xxx"
 	def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
