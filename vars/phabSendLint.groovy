@@ -8,6 +8,6 @@ def call(body) {
 	def wd = config.pwd ? new File(config.pwd) : new File('.')
 	def file = new File(wd, config.filename)
 
-	!debug ?: echo "File to parse ${file.absolutePath}, WD ${wd.absolutePath}"
+	echo "File to parse ${file.absolutePath}, WD ${wd.absolutePath}"
 
 }
