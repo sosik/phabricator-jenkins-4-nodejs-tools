@@ -9,7 +9,7 @@ def call(String filename, Map options = [:]) {
 
 		f = f.absolute ?: new File(wd, filename)
 		echo "${f.absolutePath}"
-		!opt.debug ?: echo "${wd.absolutePath}"
+		println "aaa"
 	} catch(e) {
 		println e
 	}
