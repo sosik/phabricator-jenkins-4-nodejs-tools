@@ -19,12 +19,12 @@ def call(String filename, Map options = [:]) {
 	def r = new XmlSlurper().parse(f)
 	def reportMap = r.file.collect {
 		// get relative filename
-		String filename = it.@name.toString().drop(wd.absolutePath.length() + 1)
+		String relFilename = it.@name.toString().drop(wd.absolutePath.length() + 1)
 		it.error.collect {[   
 			name: it.@source.toString(),
 			severity: it.@severity.toString(),
 			code: it.@source.toString(),
-			path: filename,
+			path: relFilename,
 			line: it.@line?.toInteger() ?: 0,
 			char: it.@column?.toInteger() ?: 0,
 			description: it.@message.toString(),
