@@ -13,6 +13,7 @@ def call(String filename, Map options = [:]) {
 		return
 	}
 
+	println "GGGG"
 	def r = new XmlSlurper().parse(f)
 	def reportMap = r.file.collect {
 		// get relative filename
@@ -29,6 +30,6 @@ def call(String filename, Map options = [:]) {
 	}.flatten().findAll {
 		it
 	}
-
+	println "FFFFF"
 	if (opt.debug) { println "${reportMap}"}
 }
