@@ -7,5 +7,5 @@ def call(String filename, Map options = [:]) {
 	def wd = new File(pwd())
 
 	f = f.absolute ?: new File(wd, filename)
-	!debug ?: echo "${f.absolutePath}"
+	!opt.debug ?: echo "${f.absolutePath}"
 }
